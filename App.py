@@ -1,5 +1,5 @@
 # ✅ app.py background & animated text styling
-from streamlit_autorefresh import st_autorefresh
+from streamlit_extras.st_autorefresh import st_autorefresh
 import requests
 from streamlit.components.v1 import html
 import streamlit as st

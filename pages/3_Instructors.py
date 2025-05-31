@@ -80,7 +80,7 @@ if start_date == end_date:
 # SQL Query Execution
 # ==========
 query = """
-SELECT * FROM INSTRUCTOR
+SELECT * FROM instructor
 WHERE Surname LIKE %s
 AND BirthDate BETWEEN %s AND %s
 """

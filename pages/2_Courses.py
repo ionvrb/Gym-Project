@@ -29,7 +29,7 @@ with col2:
 # Connect to DB
 # ==========
 conn = get_connection()
-df_courses = pd.read_sql("SELECT * FROM COURSES", conn)
+df_courses = pd.read_sql("SELECT * FROM courses", conn)
 
 # ==========
 # Filters UI

@@ -9,7 +9,7 @@ st.title("🏠 GYM Dashboard")
 st.markdown("### Overview of Scheduled Lessons in the Week")
 
 conn = get_connection()
-df = pd.read_sql("SELECT Day, StartTime FROM PROGRAM", conn)
+df = pd.read_sql("SELECT Day, StartTime FROM program", conn)
 
 # Metric: Total lessons
 st.metric("📅 Total Lessons", len(df))

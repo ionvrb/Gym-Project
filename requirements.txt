@@ -4,4 +4,3 @@ requests
 streamlit-lottie
 psycopg2
 mysql-connector-python
-streamlit-extras

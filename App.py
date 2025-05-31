@@ -1,12 +1,9 @@
 # ✅ app.py background & animated text styling
-from streamlit_extras.st_autorefresh import st_autorefresh
 import requests
 from streamlit.components.v1 import html
 import streamlit as st
 import base64
 import time
-
-
 def set_bg(image_file):
     with open(image_file, "rb") as f:
         encoded = base64.b64encode(f.read()).decode()

@@ -2,6 +2,6 @@ streamlit
 pandas
 requests
 streamlit-lottie
-psycopg2
+psycopg2-binary
 mysql-connector-python
 rich

@@ -93,8 +93,8 @@ else:
         SELECT P.CodC, P.Day, P.StartTime, P.Room,
                CONCAT(I.Name, ' ', I.Surname) AS Instructor,
                I.Email
-        FROM PROGRAM P
-        JOIN INSTRUCTOR I ON P.FisCode = I.FisCode
+        FROM program P
+        JOIN instructor I ON P.FisCode = I.FisCode
         WHERE P.CodC IN {course_codes if len(course_codes) > 1 else f"('{course_codes[0]}')"}
         ORDER BY P.CodC, P.Day, P.StartTime;
         """

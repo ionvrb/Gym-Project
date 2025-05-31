@@ -9,8 +9,8 @@ st.title("🗓️ Add New Scheduled Lesson")
 conn = get_connection()
 
 # Fetch dropdown options from DB
-instructors = pd.read_sql("SELECT FisCode FROM INSTRUCTOR", conn)
-courses = pd.read_sql("SELECT CodC FROM COURSES", conn)
+instructors = pd.read_sql("SELECT FisCode FROM instructor", conn)
+courses = pd.read_sql("SELECT CodC FROM courses", conn)
 
 # ========== Form ==========
 with st.form("add_program_form"):
@@ -33,7 +33,7 @@ with st.form("add_program_form"):
                 # Check for conflict
                 cursor = conn.cursor()
                 cursor.execute(
-                    "SELECT * FROM PROGRAM WHERE CodC = %s AND Day = %s",
+                    "SELECT * FROM program WHERE CodC = %s AND Day = %s",
                     (codc, day)
                 )
                 conflict = cursor.fetchone()
@@ -42,7 +42,7 @@ with st.form("add_program_form"):
                 else:
                     # Insert into PROGRAM
                     cursor.execute(
-                        "INSERT INTO PROGRAM (FisCode, Day, StartTime, Duration, CodC, Room) VALUES (%s, %s, %s, %s, %s, %s)",
+                        "INSERT INTO program (FisCode, Day, StartTime, Duration, CodC, Room) VALUES (%s, %s, %s, %s, %s, %s)",
                         (fiscode, day, start_time, duration, codc, room)
                     )
                     conn.commit()
